@@ -22,8 +22,8 @@ from reservas.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='Home'),
-    path('api/', include(router.urls)),
+    #path('', views.index, name='Home'),
+    path('', include(router.urls)),
     path('clientes/', ClienteCreateView.as_view(), name='cliente-create'),
     path('clientes/update/<int:pk>', ClienteUpdateView.as_view(), name='cliente-update'),
     path('clientes/delete/<int:pk>', ClienteDeleteView.as_view(), name='cliente-delete'),
